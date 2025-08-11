@@ -21,20 +21,45 @@
             <button (click)="addPalabra()" type="submit">Añadir</button>
         </div>
     </div> -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body class=" min-h-screen">
+    <!-- header con herramientas -->
+  <header class=" flex h-13 justify-between border-1 border-b-stone-300">
+    <div class="ml-5">
+      <p class="font-sans font-bold text-lg h-6">Chat con Agora</p>
+      <p class="text-sm text-neutral-500">convierte datos complejos en respuestas claras.</p>
+    </div>
+    <div class="flex mr-5 justify-between w-20 items-center">
+      <button class="rounded-full h-8 w-8 border-1 border-stone-300 cursor-pointer ">
+        <i class="bi bi-question-circle text-xl leading-none block"></i>
+      </button>
+      <button class="rounded-full h-8 w-8 shadow-2xs bg-blue-950 text-white cursor-pointer">
+        <i class="bi bi-gear text-xl leading-none block "></i>
+      </button>
+    </div>
+  </header>
 
+  <!-- div principal -->
 
-  <div class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+  <main class=" bg-gray-100 flex items-center justify-center ">
+    
       <!-- texto del agente -->
        <div class="absolute top-40">
           <p class="font-sans font-bold text-2xl text-center ">Agente Ágora de SICOE: reportes al instante</p>
-          <p class="text-center ">solicita analiza y recibe inteligencia operativa en segundos, usando lenguaje natural</p>
+          <p class="text-center text-neutral-500 ">solicita analiza y recibe inteligencia operativa en segundos, usando lenguaje natural</p>
        </div>
       <div class="w-full max-w-2xl absolute bottom-10 ">
 
         <!-- Consejo flotante -->
         <div
           *ngIf="mostrarConsejo"
-          class="flex items-center justify-between text-white bg-blue-700 text-sm px-4 py-2 rounded-t-xl"
+          class="flex items-center justify-between text-white bg-blue-950 text-sm px-4 py-2 rounded-t-xl"
         >
           <div class="flex items-center space-x-2">
              <i class="bi bi-info-circle-fill text-white text-base"></i>
@@ -63,4 +88,6 @@
   </button>
         </div>
       </div>
-    </div>
+    </main>
+ </body>
+  </html>
