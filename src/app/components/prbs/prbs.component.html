@@ -1,4 +1,4 @@
-<hr>
+<!-- <hr>
 
 
 <div class="chat-container">
@@ -20,4 +20,47 @@
             <input [(ngModel)]="nuevaPalabra" type="text" (keydown.enter)="addPalabra()" placeholder="agrega una nueva palabra">
             <button (click)="addPalabra()" type="submit">Añadir</button>
         </div>
+    </div> -->
+
+
+  <div class="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <!-- texto del agente -->
+       <div class="absolute top-40">
+          <p class="font-sans font-bold text-2xl text-center ">Agente Ágora de SICOE: reportes al instante</p>
+          <p class="text-center ">solicita analiza y recibe inteligencia operativa en segundos, usando lenguaje natural</p>
+       </div>
+      <div class="w-full max-w-2xl absolute bottom-10 ">
+
+        <!-- Consejo flotante -->
+        <div
+          *ngIf="mostrarConsejo"
+          class="flex items-center justify-between text-white bg-blue-700 text-sm px-4 py-2 rounded-t-xl"
+        >
+          <div class="flex items-center space-x-2">
+             <i class="bi bi-info-circle-fill text-white text-base"></i>
+            <span>Consejo: mientras más claro seas, más preciso será tu reporte.</span>
+          </div>
+
+          <button (click)="cerrarConsejo()" class="text-white text-xl leading-none focus:outline-none cursor-pointer ">
+            ×
+          </button>
+        </div>
+
+        <!-- Caja del input -->
+        <div
+          class="flex items-center border border-gray-300 bg-white rounded-xl px-4 py-3 shadow-sm"
+          [ngClass]="{ 'rounded-t-none': mostrarConsejo }"
+        >
+          <input
+            [(ngModel)]="mensaje"
+            class="flex-grow outline-none text-gray-800 placeholder-gray-400"
+            placeholder="Describe tu consulta... p. ej. *Resumen de logística última semana*"
+          />
+
+          <!-- Icono de enviar -->
+        <button (click)="enviar()" class="ml-3 text-cyan-600 hover:text-cyan-800 border-l-1 pl-2 cursor-pointer">
+    <i class="bi bi-send-fill text-xl"></i>
+  </button>
+        </div>
+      </div>
     </div>

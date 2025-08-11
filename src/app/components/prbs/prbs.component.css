@@ -1,4 +1,4 @@
-
+@import "tailwindcss";
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -43,7 +43,4 @@
 }
 .prbs{
     padding: 40px;
-}
-span {
-  max-width: 100%;
 }

@@ -9,23 +9,33 @@ import { CommonModule } from '@angular/common';
 })
 export class PrbsComponent {
 
-    palabras: string[] = [];
+//     palabras: string[] = [];
 
-    nuevaPalabra: string = "";
+//     nuevaPalabra: string = "";
 
-@ViewChild('messagesDiv') messagesDiv!: ElementRef;
+// @ViewChild('messagesDiv') messagesDiv!: ElementRef;
 
-    addPalabra(){
-      if(this.nuevaPalabra && this.nuevaPalabra.trim()){
+//     addPalabra(){
+//       if(this.nuevaPalabra && this.nuevaPalabra.trim()){
 
-        this.palabras.push(this.nuevaPalabra.trim())
+//         this.palabras.push(this.nuevaPalabra.trim())
 
-        this.nuevaPalabra = "";
-        setTimeout(() => this.scrollToBottom(), 100)
-      }
-    }
-    scrollToBottom(){
-      const el = this.messagesDiv.nativeElement;
-      el.scrollTop = el.scrollHeight;
-    }
+//         this.nuevaPalabra = "";
+//         setTimeout(() => this.scrollToBottom(), 100)
+//       }
+//     }
+//     scrollToBottom(){
+//       const el = this.messagesDiv.nativeElement;
+//       el.scrollTop = el.scrollHeight;
+//     }
+mensaje = "";
+mostrarConsejo = true
+cerrarConsejo() {
+    this.mostrarConsejo = false;
+  }
+
+  enviar() {
+    alert(`Mensaje enviado: ${this.mensaje}`);
+    this.mensaje = '';
+  }
 }
